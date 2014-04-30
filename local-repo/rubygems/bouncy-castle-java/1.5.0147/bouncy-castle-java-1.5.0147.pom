@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>rubygems</groupId>
+  <artifactId>bouncy-castle-java</artifactId>
+  <version>1.5.0147</version>
+  <name><![CDATA[Gem redistribution of Bouncy Castle jars]]></name>
+  <packaging>gem</packaging>
+  <description><![CDATA[Gem redistribution of "Legion of the Bouncy Castle Java cryptography APIs" jars at http://www.bouncycastle.org/java.html]]></description>
+  <url>http://github.com/jruby/jruby/tree/master/gems/bouncy-castle-java/</url>
+  <developers>
+    <developer>
+      <id>nahi_at_ruby-lang_dot_org</id>
+      <name>Hiroshi Nakamura</name>
+      <email>nahi@ruby-lang.org</email>
+    </developer>
+  </developers>
+  <licenses>
+    <license>
+      <name>LICENSE</name>
+      <url>./LICENSE.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>de.saumya.mojo</groupId>
+        <artifactId>gem-maven-plugin</artifactId>
+        <version>0.29.2</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

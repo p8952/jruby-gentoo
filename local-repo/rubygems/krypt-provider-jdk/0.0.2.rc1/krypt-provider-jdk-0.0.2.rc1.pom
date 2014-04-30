@@ -1,0 +1,40 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>rubygems</groupId>
+  <artifactId>krypt-provider-jdk</artifactId>
+  <version>0.0.2.rc1-SNAPSHOT</version>
+  <packaging>gem</packaging>
+  <name>Default provider for JRuby</name>
+  <url>https://github.com/krypt/krypt-provider-jdk</url>
+  <description>Java implementation of the krypt-provider API using the standard JDK security library</description>
+  <properties>
+    <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+    <jruby.plugins.version>1.0.0-rc4</jruby.plugins.version>
+  </properties>
+  <repositories>
+    <repository>
+      <id>rubygems-releases</id>
+      <url>http://rubygems-proxy.torquebox.org/releases</url>
+    </repository>
+  </repositories>
+  <build>
+    <extensions>
+      <extension>
+        <groupId>de.saumya.mojo</groupId>
+        <artifactId>gem-extension</artifactId>
+        <version>${jruby.plugins.version}</version>
+      </extension>
+    </extensions>
+    <directory>${basedir}/pkg</directory>
+    <plugins>
+      <plugin>
+        <groupId>de.saumya.mojo</groupId>
+        <artifactId>gem-maven-plugin</artifactId>
+        <version>${jruby.plugins.version}</version>
+        <configuration>
+          <gemspec>krypt-provider-jdk-0.0.2.rc1.gemspec</gemspec>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

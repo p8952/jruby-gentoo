@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>rubygems</groupId>
+  <artifactId>rake</artifactId>
+  <versioning>
+    <versions>
+      <version>10.1.0.beta.3-SNAPSHOT</version>
+      <version>10.1.0.beta.2-SNAPSHOT</version>
+      <version>10.1.0.beta.1-SNAPSHOT</version>
+      <version>10.0.0.beta.2-SNAPSHOT</version>
+      <version>10.0.0.beta.1-SNAPSHOT</version>
+      <version>0.9.3.beta.4-SNAPSHOT</version>
+      <version>0.9.3.beta.3-SNAPSHOT</version>
+      <version>0.9.3.beta.2-SNAPSHOT</version>
+      <version>0.9.3.beta.1-SNAPSHOT</version>
+      <version>0.9.0.beta.5-SNAPSHOT</version>
+      <version>0.9.0.beta.4-SNAPSHOT</version>
+      <version>0.9.0.beta.2-SNAPSHOT</version>
+      <version>0.9.0.beta.1-SNAPSHOT</version>
+      <version>0.9.0.beta.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>19990909090909</lastUpdated>
+  </versioning>
+</metadata>

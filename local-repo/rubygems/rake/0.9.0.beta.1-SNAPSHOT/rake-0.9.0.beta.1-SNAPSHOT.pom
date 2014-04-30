@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>rubygems</groupId>
+  <artifactId>rake</artifactId>
+  <version>0.9.0.beta.1</version>
+  <name><![CDATA[Ruby based make-like utility.]]></name>
+  <packaging>gem</packaging>
+  <description><![CDATA[      Rake is a Make-like program implemented in Ruby. Tasks
+      and dependencies are specified in standard Ruby syntax.
+]]></description>
+  <url>http://rake.rubyforge.org</url>
+  <developers>
+    <developer>
+      <id>jim_at_weirichhouse_dot_org</id>
+      <name>Jim Weirich</name>
+      <email>jim@weirichhouse.org</email>
+    </developer>
+  </developers>
+  <licenses>
+    <license>
+      <name>MIT-LICENSE</name>
+      <url>./MIT-LICENSE</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <dependencies>
+    <dependency>
+      <groupId>rubygems</groupId>
+      <artifactId>session</artifactId>
+      <version>[2.4,2.99999]</version>
+      <type>gem</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>rubygems</groupId>
+      <artifactId>flexmock</artifactId>
+      <version>[0.8.11,0.8.99999]</version>
+      <type>gem</type>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>de.saumya.mojo</groupId>
+        <artifactId>gem-maven-plugin</artifactId>
+        <version>0.29.2</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

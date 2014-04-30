@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>rubygems</groupId>
+  <artifactId>krypt-provider-jdk</artifactId>
+  <versioning>
+    <versions>
+      <version>0.0.1</version>
+    </versions>
+    <lastUpdated>19990909090909</lastUpdated>
+  </versioning>
+</metadata>

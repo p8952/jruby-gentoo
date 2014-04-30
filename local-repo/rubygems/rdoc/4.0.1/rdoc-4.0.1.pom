@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>rubygems</groupId>
+  <artifactId>rdoc</artifactId>
+  <version>4.0.1</version>
+  <name><![CDATA[RDoc produces HTML and command-line documentation for Ruby projects]]></name>
+  <packaging>gem</packaging>
+  <description><![CDATA[RDoc produces HTML and command-line documentation for Ruby projects.  RDoc
+includes the +rdoc+ and +ri+ tools for generating and displaying documentation
+from the command-line.]]></description>
+  <url>http://docs.seattlerb.org/rdoc</url>
+  <developers>
+    <developer>
+      <id></id>
+      <name>Dave Thomas</name>
+      <email></email>
+    </developer>
+    <developer>
+      <id>drbrain_at_segment7_dot_net</id>
+      <name>Eric Hodel</name>
+      <email>drbrain@segment7.net</email>
+    </developer>
+    <developer>
+      <id>technomancy_at_gmail_dot_com</id>
+      <name>Phil Hagelberg</name>
+      <email>technomancy@gmail.com</email>
+    </developer>
+    <developer>
+      <id>tony_dot_strauss_at_designingpatterns_dot_com</id>
+      <name>Tony Strauss</name>
+      <email>tony.strauss@designingpatterns.com</email>
+    </developer>
+  </developers>
+  <licenses>
+    <license>
+      <name>LICENSE</name>
+      <url>./LICENSE.rdoc</url>
+      <distribution>repo</distribution>
+    </license>
+    <license>
+      <name>Ruby</name>
+      <url>./Ruby</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <dependencies>
+    <dependency>
+      <groupId>rubygems</groupId>
+      <artifactId>json</artifactId>
+      <version>[1.4,1.99999]</version>
+      <type>gem</type>
+    </dependency>
+    <dependency>
+      <groupId>rubygems</groupId>
+      <artifactId>kpeg</artifactId>
+      <version>[0.9,0.99999]</version>
+      <type>gem</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>rubygems</groupId>
+      <artifactId>minitest</artifactId>
+      <version>[4.6,4.99999]</version>
+      <type>gem</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>rubygems</groupId>
+      <artifactId>rdoc</artifactId>
+      <version>[3.10,3.99999]</version>
+      <type>gem</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>rubygems</groupId>
+      <artifactId>racc</artifactId>
+      <version>[1.4,1.99999]</version>
+      <type>gem</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>rubygems</groupId>
+      <artifactId>ZenTest</artifactId>
+      <version>[4,4]</version>
+      <type>gem</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>rubygems</groupId>
+      <artifactId>hoe</artifactId>
+      <version>[3.5,3.99999]</version>
+      <type>gem</type>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>de.saumya.mojo</groupId>
+        <artifactId>gem-maven-plugin</artifactId>
+        <version>0.29.2</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

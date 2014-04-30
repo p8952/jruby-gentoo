@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>rubygems</groupId>
+  <artifactId>json</artifactId>
+  <version>1.6.4</version>
+  <name><![CDATA[JSON implementation for JRuby]]></name>
+  <packaging>gem</packaging>
+  <description><![CDATA[A JSON implementation as a JRuby extension.]]></description>
+  <url>http://json-jruby.rubyforge.org/</url>
+  <developers>
+    <developer>
+      <id>dev+ruby_at_mernen_dot_com</id>
+      <name>Daniel Luz</name>
+      <email>dev+ruby@mernen.com</email>
+    </developer>
+  </developers>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>de.saumya.mojo</groupId>
+        <artifactId>gem-maven-plugin</artifactId>
+        <version>0.29.2</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

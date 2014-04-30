@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2012 to original author or authors
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.tesla</groupId>
+    <artifactId>tesla</artifactId>
+    <version>5</version>
+  </parent>
+
+  <groupId>io.tesla.polyglot</groupId>
+  <artifactId>tesla-polyglot</artifactId>
+  <version>0.0.9</version>
+  <name>Polyglot Tesla :: Aggregator</name>
+  <packaging>pom</packaging>
+
+  <licenses>
+    <license>
+      <name>The Eclipse Public License, Version 1.0</name>
+      <url>http://www.eclipse.org/legal/epl-v10.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <properties>
+    <mavenVersion>3.1.1</mavenVersion>
+    <sisuInjectVersion>0.0.0.M5</sisuInjectVersion>
+  </properties>
+
+  <scm>
+    <connection>scm:git:git@github.com:tesla/tesla-polyglot.git</connection>
+    <developerConnection>scm:git:git@github.com:tesla/tesla-polyglot.git</developerConnection>
+    <url>https://github.com/tesla/tesla-polyglot</url>
+  </scm>
+
+  <modules>
+    <module>tesla-polyglot-common</module>
+    <module>tesla-polyglot-atom</module>
+    <module>tesla-polyglot-ruby</module>
+    <module>tesla-polyglot-groovy</module>
+    <module>tesla-polyglot-yaml</module>
+    <module>tesla-polyglot-clojure</module>
+    <module>tesla-polyglot-scala</module>
+    <module>tesla-polyglot-cli</module>
+    <module>tesla-polyglot-maven-plugin</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.tesla.polyglot</groupId>
+        <artifactId>tesla-polyglot-common</artifactId>
+        <version>0.0.9</version>
+      </dependency>
+      <!--  We inline Maven's dependency management section to align dependency versions from Maven's core -->
+      <dependency>
+        <groupId>org.apache.maven</groupId>
+        <artifactId>maven</artifactId>
+        <version>${mavenVersion}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- I'd like to remove these two and place them in Maven's depMan section. We want to be a complete
+           superset as much as possible -->
+      <dependency>
+        <groupId>org.eclipse.sisu</groupId>
+        <artifactId>org.eclipse.sisu.inject.tests</artifactId>
+        <version>0.0.0.M3</version>
+        <scope>test</scope>
+      </dependency>      
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.11</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-component-metadata</artifactId>
+        <version>1.5.4</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate-metadata</goal>
+              <goal>generate-test-metadata</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>io.tesla.maven.plugins</groupId>
+        <artifactId>tesla-license-plugin</artifactId>
+        <version>1.0.0</version>
+        <configuration>
+          <aggregate>true</aggregate>
+          <strictCheck>true</strictCheck>
+          <header>license-header.txt</header>
+          <useDefaultExcludes>false</useDefaultExcludes>
+          <includes>
+            <include>**/pom.xml</include>
+            <include>**/*.xml</include>
+            <include>**/*.xsd</include>
+            <include>**/*.xjb</include>
+            <include>**/*.mdo</include>
+            <include>**/*.properties</include>
+            <include>**/*.java</include>
+            <include>**/*.groovy</include>
+            <include>**/*.scala</include>
+            <include>**/*.aj</include>
+            <include>**/*.js</include>
+            <include>**/*.css</include>
+          </includes>
+          <excludes>
+            <exclude>**/target/**</exclude>
+            <exclude>**/conf/**</exclude>
+            <exclude>**/.*</exclude>
+            <exclude>**/pkg/**</exclude>
+            <exclude>**/.idea/**</exclude>
+            <exclude>**/src/test/resources/*.scala</exclude>
+            <exclude>**/release.properties</exclude>
+            <exclude>**/pom.xml.releaseBackup</exclude>
+            <exclude>release.sh</exclude>
+          </excludes>
+          <mapping>
+            <scala>JAVADOC_STYLE</scala>
+            <xjb>XML_STYLE</xjb>
+            <mdo>XML_STYLE</mdo>
+          </mapping>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+    <pluginManagement>
+      <plugins>
+        <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>io.tesla.maven.plugins</groupId>
+                    <artifactId>tesla-license-plugin</artifactId>
+                    <versionRange>[0.0.1-SNAPSHOT,)</versionRange>
+                    <goals>
+                      <goal>check</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore></ignore>
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>

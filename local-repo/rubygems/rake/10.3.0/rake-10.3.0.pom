@@ -1,0 +1,84 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>rubygems</groupId>
+  <artifactId>rake</artifactId>
+  <version>10.3.0</version>
+  <packaging>gem</packaging>
+  <name>Rake is a Make-like program implemented in Ruby</name>
+  <url>https://github.com/jimweirich/rake</url>
+  <description>Rake is a Make-like program implemented in Ruby. Tasks and dependencies are
+specified in standard Ruby syntax.
+
+Rake has the following features:
+
+* Rakefiles (rake's version of Makefiles) are completely defined in
+  standard Ruby syntax.  No XML files to edit.  No quirky Makefile
+  syntax to worry about (is that a tab or a space?)
+
+* Users can specify tasks with prerequisites.
+
+* Rake supports rule patterns to synthesize implicit tasks.
+
+* Flexible FileLists that act like arrays but know about manipulating
+  file names and paths.
+
+* A library of prepackaged tasks to make building rakefiles easier. For example,
+  tasks for building tarballs and publishing to FTP or SSH sites.  (Formerly
+  tasks for building RDoc and Gems were included in rake but they're now
+  available in RDoc and RubyGems respectively.)
+
+* Supports parallel execution of tasks.</description>
+  <properties>
+    <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+    <jruby.plugins.version>1.0.0-rc4</jruby.plugins.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>rubygems</groupId>
+      <artifactId>minitest</artifactId>
+      <version>[5.2,5.99999]</version>
+      <type>gem</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>rubygems</groupId>
+      <artifactId>rdoc</artifactId>
+      <version>[4.0,4.99999]</version>
+      <type>gem</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>rubygems</groupId>
+      <artifactId>hoe</artifactId>
+      <version>[3.7,3.99999]</version>
+      <type>gem</type>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <repositories>
+    <repository>
+      <id>rubygems-releases</id>
+      <url>http://rubygems-proxy.torquebox.org/releases</url>
+    </repository>
+  </repositories>
+  <build>
+    <extensions>
+      <extension>
+        <groupId>de.saumya.mojo</groupId>
+        <artifactId>gem-extension</artifactId>
+        <version>${jruby.plugins.version}</version>
+      </extension>
+    </extensions>
+    <directory>${basedir}/pkg</directory>
+    <plugins>
+      <plugin>
+        <groupId>de.saumya.mojo</groupId>
+        <artifactId>gem-maven-plugin</artifactId>
+        <version>${jruby.plugins.version}</version>
+        <configuration>
+          <gemspec>rake-10.3.0.gemspec</gemspec>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

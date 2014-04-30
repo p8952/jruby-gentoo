@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>rubygems</groupId>
+  <artifactId>jruby-openssl</artifactId>
+  <version>0.9.3</version>
+  <name><![CDATA[OpenSSL add-on for JRuby]]></name>
+  <packaging>gem</packaging>
+  <description><![CDATA[JRuby-OpenSSL is an add-on gem for JRuby that emulates the Ruby OpenSSL native library.]]></description>
+  <url>https://github.com/jruby/jruby</url>
+  <developers>
+    <developer>
+      <id>ola_dot_bini_at_gmail_dot_com</id>
+      <name>Ola Bini</name>
+      <email>ola.bini@gmail.com</email>
+    </developer>
+  </developers>
+  <licenses>
+    <license>
+      <name>License</name>
+      <url>./License.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <dependencies>
+    <dependency>
+      <groupId>rubygems</groupId>
+      <artifactId>bouncy-castle-java</artifactId>
+      <version>[1.5.0147,)</version>
+      <type>gem</type>
+    </dependency>
+    <dependency>
+      <groupId>rubygems</groupId>
+      <artifactId>rake</artifactId>
+      <version>[10.1,10.99999]</version>
+      <type>gem</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>rubygems</groupId>
+      <artifactId>ruby-maven</artifactId>
+      <version>[3.1.0.0.0,3.1.0.0.99999]</version>
+      <type>gem</type>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>de.saumya.mojo</groupId>
+        <artifactId>gem-maven-plugin</artifactId>
+        <version>0.29.2</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
